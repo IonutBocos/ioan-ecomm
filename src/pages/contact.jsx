@@ -1,4 +1,5 @@
-import Head from "next/head";
+import Head from 'next/head';
+import { Layout } from '../layouts';
 
 const ContactPage = () => {
   return (
@@ -7,9 +8,13 @@ const ContactPage = () => {
         <title>Contact Page</title>
       </Head>
 
-      <main>hello from next</main>
+      <Layout>
+        <main>hello from next</main>
+      </Layout>
     </>
   );
 };
 
+// este obligatoriu sa returnam un default export
+// pentru fiecare pagina
 export default ContactPage;

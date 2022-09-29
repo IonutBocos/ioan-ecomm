@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Layout } from '../layouts';
 
 const Home = () => {
   return (
@@ -7,7 +8,9 @@ const Home = () => {
         <title>Homepage</title>
       </Head>
 
-      <main className="font-bold underline bg-red-500">homepage</main>
+      <Layout>
+        <main>las asa</main>
+      </Layout>
     </>
   );
 };
