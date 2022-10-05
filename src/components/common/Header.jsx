@@ -42,11 +42,11 @@ export const Header = () => {
         </button>
 
         <div className="hidden lg:flex">
-          <ul className="flex-row gap-y-3">
+          <ul className="flex flex-col gap-y-5 text-xl">
             <li>
               <Link href="/">
                 <a title="Home">
-                  <FaFacebookF size="22"></FaFacebookF>
+                  <FaFacebookF></FaFacebookF>
                 </a>
               </Link>
             </li>
@@ -54,14 +54,14 @@ export const Header = () => {
             <li>
               <Link href="/">
                 <a title="Home">
-                  <FiTwitter size="22"></FiTwitter>
+                  <FiTwitter></FiTwitter>
                 </a>
               </Link>
             </li>
 
             <Link href="/">
               <a title="Home">
-                <TiSocialGooglePlus size="22px"></TiSocialGooglePlus>
+                <TiSocialGooglePlus size="28px"></TiSocialGooglePlus>
               </a>
             </Link>
           </ul>

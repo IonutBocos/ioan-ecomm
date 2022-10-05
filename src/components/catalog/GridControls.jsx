@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { BsFillGridFill, BsGrid3X3GapFill } from 'react-icons/bs';
+import { FaGripLines } from 'react-icons/fa';
 
 const buttonClasses =
   'w-24 h-24 border-1 border-zinc-400 flex justify-center items-center';
@@ -7,7 +9,7 @@ export const GridControls = () => {
   const [itemsPerRow, setItemsPerRow] = useState('1/row');
 
   return (
-    <ul className="flex border border-l-0 border-zinc-400">
+    <ul className="flex border border-l-0 border-zinc-400 text-3xl">
       <li>
         <button
           title="One per row"
@@ -18,7 +20,7 @@ export const GridControls = () => {
             setItemsPerRow('1/row');
           }}
         >
-          1
+          <FaGripLines></FaGripLines>
         </button>
       </li>
 
@@ -32,7 +34,7 @@ export const GridControls = () => {
             setItemsPerRow('2/row');
           }}
         >
-          2
+          <BsFillGridFill></BsFillGridFill>
         </button>
       </li>
 
@@ -46,7 +48,7 @@ export const GridControls = () => {
             setItemsPerRow('4/row');
           }}
         >
-          4
+          <BsGrid3X3GapFill></BsGrid3X3GapFill>
         </button>
       </li>
     </ul>
