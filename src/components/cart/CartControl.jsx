@@ -3,7 +3,7 @@ import { BsHandbag } from 'react-icons/bs';
 
 export const CartControl = () => {
   return (
-    <ul className="border border-zinc-400 border-1-0 text-3xl">
+    <ul className="border border-zinc-400 text-3xl">
       <li>
         <Link href="/cart">
           <a

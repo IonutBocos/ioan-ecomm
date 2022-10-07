@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BiArrowToTop } from 'react-icons/bi';
 
 export const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -119,14 +120,15 @@ export const Footer = () => {
         </div>
       </section>
 
-      <div className="border border-t border-l-neutral-900"></div>
-
-      <section className="container px-4 lg:px-0 mx-auto">
-        <div>
-          <button onClick={scrollToTop}>
-            click to scroll to the 100th pixel
+      <section className="container px-4 lg:px-0 mx-auto ">
+        <div className="border border-t border-l-neutral-900 h-28">
+          <button
+            onClick={scrollToTop}
+            className="text-4xl border border-zinc-400 rounded-full relative bottom-5 left-2/4 bg-zinc-100"
+          >
+            <BiArrowToTop></BiArrowToTop>
           </button>
-          <h1>2022. Created by Bocos Ioan</h1>
+          <h1 className="text-center">2022. Created by Bocos Ioan</h1>
         </div>
       </section>
     </>
