@@ -6,7 +6,7 @@ const buttonClasses =
   'w-24 h-24 border-1 border-zinc-400 flex justify-center items-center';
 
 export const GridControls = ({ setPerRow = () => {} }) => {
-  const [itemsPerRow, setItemsPerRow] = useState('1/row');
+  const [itemsPerRow, setItemsPerRow] = useState('4/row');
 
   // de fiecare data cand itemsPerRow se schimba
   // ruleaza acest callback
