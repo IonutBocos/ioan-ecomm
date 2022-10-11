@@ -120,8 +120,8 @@ export const Footer = () => {
         </div>
       </section>
 
-      <section className="container px-4 lg:px-0 mx-auto ">
-        <div className="border border-t border-l-neutral-900 h-28">
+      <section className="px-4 lg:px-0 mx-auto ">
+        <div className="border border-t h-28">
           <button
             onClick={scrollToTop}
             className="text-4xl border border-zinc-400 rounded-full relative bottom-5 left-2/4 bg-zinc-100"

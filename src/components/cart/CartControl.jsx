@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BsHandbag } from 'react-icons/bs';
+import { MdKeyboardBackspace } from 'react-icons/md';
 
 export const CartControl = () => {
   return (
