@@ -5,9 +5,9 @@ export const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
     <>
-      <section className="flex justify-between items-center container px-4 lg:px-0 mx-auto h-80 leading-8">
+      <section className="flex justify-between items-center flex-col h-auto gap-y-8 py-8 lg:py-0 lg:flex-row container px-4 lg:px-0 mx-auto lg:h-80 leading-8 ">
         <div>
-          <h2 className="uppercase font-bold pb-6">Los Angeles</h2>
+          <h2 className="uppercase font-bold lg:pb-6">Los Angeles</h2>
           <ul>
             <li>145 Oliveshka Street</li>
             <li>Los Angeles, LA 90003</li>
@@ -27,7 +27,7 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h2 className="uppercase font-bold pb-6">San Francisco</h2>
+          <h2 className="uppercase font-bold lg:pb-6">San Francisco</h2>
           <ul>
             <li>145 Oliveshka Street</li>
             <li>Los Angeles, LA 90003</li>
@@ -47,7 +47,7 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h2 className="uppercase font-bold pb-6">New York</h2>
+          <h2 className="uppercase font-bold lg:pb-6">New York</h2>
           <ul>
             <li>145 Oliveshka Street</li>
             <li>Los Angeles, LA 90003</li>
@@ -68,12 +68,17 @@ export const Footer = () => {
 
         <div className="flex justify-between gap-6">
           <div>
-            <h2 className="uppercase font-bold pb-8">Follow us</h2>
+            <h2 className="uppercase font-bold lg:pb-8">Follow us</h2>
             <ul>
               <li>
-                <Link href="https://facebook.com">
-                  <a title="follow">Facebook</a>
-                </Link>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="follow"
+                >
+                  Facebook
+                </a>
               </li>
 
               <li>

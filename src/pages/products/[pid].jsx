@@ -4,8 +4,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { baseUrl } from '../..';
-import { CartControl } from '../../components/cart';
+import { CartControl, ContinueShopping } from '../../components/cart';
 import { Layout } from '../../layouts';
+import { BiLoaderCircle } from 'react-icons/bi';
+
+import { AiFillStar } from 'react-icons/ai';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -28,14 +31,22 @@ const ProductPage = () => {
   }, [pid]);
 
   if (product === null) {
-    return <></>;
+    return (
+      <div className="flex h-screen w-screen justify-center items-center">
+        <BiLoaderCircle size="48" className="animate-spin"></BiLoaderCircle>
+      </div>
+    );
   }
 
   const { id, title, description, price, image } = product;
+  const { rate, count } = product.rating;
   const formattedPrice = new Intl.NumberFormat('en-US', {
     currency: 'USD',
     style: 'currency',
   }).format(price);
+
+  const index = Math.floor(rate);
+  const stars = Array(index);
 
   return (
     <>
@@ -46,7 +57,8 @@ const ProductPage = () => {
       <Layout>
         <main>
           <header className="container px-4 lg:px-0 mx-auto flex justify-between">
-            <div></div>``
+            <ContinueShopping></ContinueShopping>
+
             <CartControl></CartControl>
           </header>
 
@@ -61,6 +73,11 @@ const ProductPage = () => {
 
             <header className="col-start-7 col-span-6 pt-12">
               <h1 className="text-2xl uppercase font-medium">{title}</h1>
+              <div>
+                {stars.map((_, index) => {
+                  return <AiFillStar key={index}></AiFillStar>;
+                })}
+              </div>
               <p className="mt-12">{description}</p>
 
               <div className="mt-12">

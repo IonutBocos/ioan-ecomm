@@ -44,23 +44,23 @@ export const Header = () => {
         <div className="hidden lg:flex">
           <ul className="flex flex-col gap-y-5 text-xl">
             <li>
-              <Link href="/">
-                <a title="Home">
+              <Link href="https://facebook.com">
+                <a title="Home" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF></FaFacebookF>
                 </a>
               </Link>
             </li>
 
             <li>
-              <Link href="/">
-                <a title="Home">
+              <Link href="https://twitter.com">
+                <a title="Home" target="_blank" rel="noopener noreferrer">
                   <FiTwitter></FiTwitter>
                 </a>
               </Link>
             </li>
 
-            <Link href="/">
-              <a title="Home">
+            <Link href="https://googleplus.com">
+              <a title="Home" target="_blank" rel="noopener noreferrer">
                 <TiSocialGooglePlus size="28px"></TiSocialGooglePlus>
               </a>
             </Link>

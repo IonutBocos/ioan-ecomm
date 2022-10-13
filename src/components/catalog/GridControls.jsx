@@ -3,7 +3,7 @@ import { BsFillGridFill, BsGrid3X3GapFill } from 'react-icons/bs';
 import { FaGripLines } from 'react-icons/fa';
 
 const buttonClasses =
-  'w-24 h-24 border-1 border-zinc-400 flex justify-center items-center';
+  'w-24 h-24 border-l border-zinc-400 flex justify-center items-center';
 
 export const GridControls = ({ setPerRow = () => {} }) => {
   const [itemsPerRow, setItemsPerRow] = useState('4/row');

@@ -1,8 +1,15 @@
 import Link from 'next/link';
-import { BsHandbag } from 'react-icons/bs';
-import { MdKeyboardBackspace } from 'react-icons/md';
+export const CartControl = ({ cart }) => {
+  const { products } = cart;
 
-export const CartControl = () => {
+  const cartQty = products.reduce((cartQty, product) => {
+    const { quantity } = product;
+
+    cartQty += quantity;
+
+    return cartQty;
+  }, 0);
+
   return (
     <ul className="border border-zinc-400 text-3xl">
       <li>
@@ -12,6 +19,7 @@ export const CartControl = () => {
             title="Cart"
           >
             <BsHandbag></BsHandbag>
+            {cartQty}
           </a>
         </Link>
       </li>
