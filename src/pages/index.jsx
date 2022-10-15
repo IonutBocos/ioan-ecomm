@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CartControl } from '../components/cart';
 import { Pagination, ProductGrid } from '../components/catalog';
 import { GridControls } from '../components/catalog/GridControls';
@@ -15,6 +15,10 @@ const Home = () => {
 
   // fara dependinte in array
   // efectul ruleaza la prima executie a functiei Home
+
+  if (cart === null) {
+    return;
+  }
 
   return (
     <>

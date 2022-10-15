@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { AiFillStar } from 'react-icons/ai';
+import { ProductReviews } from './ProductReviews';
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
+  const { rate, count } = product.rating;
+
+  const rateProduct = Math.floor(rate);
+  console.log(rateProduct);
+
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -10,7 +17,7 @@ export const ProductTile = ({ product }) => {
   return (
     <article className="w-full">
       <header>
-        <div className="w-full  text-center">
+        <div className="w-full  text-center ">
           <Link href={`/products/${id}`}>
             <a title={title}>
               <Image
@@ -19,14 +26,20 @@ export const ProductTile = ({ product }) => {
                 width={200}
                 height={200}
                 objectFit="contain"
-                className="inline "
+                className="inline -z-10"
               ></Image>
             </a>
           </Link>
         </div>
       </header>
 
-      <section className="mt-8 text-center text-sm">
+      <section className="mt-8 text-center text-sm flex flex-col items-center">
+        <div className="flex items-center">
+          {Array(rateProduct).fill(<AiFillStar></AiFillStar>)}
+
+          <p className="px-2">({count} Reviews)</p>
+        </div>
+
         <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>
 
         <div className="text-zinc-900 font-light">{formattedPrice}</div>

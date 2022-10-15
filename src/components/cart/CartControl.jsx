@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { BsHandbag } from 'react-icons/bs';
+
 export const CartControl = ({ cart }) => {
   const { products } = cart;
 
@@ -9,6 +11,10 @@ export const CartControl = ({ cart }) => {
 
     return cartQty;
   }, 0);
+
+  if (cart === null) {
+    return;
+  }
 
   return (
     <ul className="border border-zinc-400 text-3xl">

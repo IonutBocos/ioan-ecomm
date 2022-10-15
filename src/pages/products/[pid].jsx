@@ -39,14 +39,11 @@ const ProductPage = () => {
   }
 
   const { id, title, description, price, image } = product;
-  const { rate, count } = product.rating;
+
   const formattedPrice = new Intl.NumberFormat('en-US', {
     currency: 'USD',
     style: 'currency',
   }).format(price);
-
-  const index = Math.floor(rate);
-  const stars = Array(index);
 
   return (
     <>
@@ -73,11 +70,7 @@ const ProductPage = () => {
 
             <header className="col-start-7 col-span-6 pt-12">
               <h1 className="text-2xl uppercase font-medium">{title}</h1>
-              <div>
-                {stars.map((_, index) => {
-                  return <AiFillStar key={index}></AiFillStar>;
-                })}
-              </div>
+
               <p className="mt-12">{description}</p>
 
               <div className="mt-12">

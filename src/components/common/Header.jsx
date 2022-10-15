@@ -41,7 +41,7 @@ export const Header = () => {
           {menuOpen ? closeIcon : hamburgerIcon}
         </button>
 
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex z-40">
           <ul className="flex flex-col gap-y-5 text-xl">
             <li>
               <Link href="https://facebook.com">
