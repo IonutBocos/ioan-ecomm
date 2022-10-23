@@ -7,7 +7,6 @@ export const ProductTile = ({ product }) => {
   const { rate, count } = product.rating;
 
   const rateProduct = Math.floor(rate);
-  console.log(rateProduct);
 
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
