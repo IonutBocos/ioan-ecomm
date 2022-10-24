@@ -1,10 +1,24 @@
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BsHandbag } from 'react-icons/bs';
 import { AppContext } from '../../pages/_app';
 
 export const CartControl = () => {
   const { cart } = useContext(AppContext);
+
+  if (cart === null) {
+    return <></>;
+  }
+
+  const { products } = cart;
+
+  const cartQty = products.reduce((cartQty, product) => {
+    const { quantity } = product;
+
+    cartQty += quantity;
+
+    return cartQty;
+  }, 0);
 
   return (
     <ul className="border border-zinc-400 text-3xl">
@@ -15,7 +29,7 @@ export const CartControl = () => {
             title="Cart"
           >
             <BsHandbag></BsHandbag>
-            {cart.qty}
+            {cartQty}
           </a>
         </Link>
       </li>
