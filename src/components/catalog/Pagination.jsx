@@ -10,9 +10,10 @@ export const Pagination = ({ products, setPaginatedProducts }) => {
   useEffect(() => {
     setPagination({
       ...pagination,
+      page: pagination.page,
       total: products.length,
     });
-  }, [products]);
+  }, [products, setPagination, pagination.perPage, pagination.page]);
 
   useEffect(() => {
     const { total, page, perPage } = pagination;
@@ -23,7 +24,7 @@ export const Pagination = ({ products, setPaginatedProducts }) => {
     const newProducts = [...products].splice(perPage * (page - 1), perPage);
 
     setPaginatedProducts(newProducts);
-  }, [pagination]);
+  }, [pagination, setPaginatedProducts]);
 
   const { perPage, page, total } = pagination;
   const pagesCount = Math.ceil(total / perPage);

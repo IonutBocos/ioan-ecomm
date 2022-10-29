@@ -16,7 +16,7 @@ export const GridControls = ({ setPerRow = () => {} }) => {
     const perRow = parseInt(itemsPerRow);
 
     setPerRow(perRow);
-  }, [itemsPerRow]);
+  }, [itemsPerRow, setPerRow]);
 
   if (isMobile === true) {
     return <></>;

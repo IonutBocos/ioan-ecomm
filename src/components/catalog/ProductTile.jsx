@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 import { ProductReviews } from './ProductReviews';
+import { AddToCart } from './AddToCart';
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
   const { rate, count } = product.rating;
@@ -42,6 +43,8 @@ export const ProductTile = ({ product }) => {
         <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>
 
         <div className="text-zinc-900 font-light">{formattedPrice}</div>
+
+        <AddToCart product={product}></AddToCart>
       </section>
     </article>
   );

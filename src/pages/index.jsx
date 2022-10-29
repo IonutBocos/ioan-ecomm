@@ -1,7 +1,11 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { CartControl } from '../components/cart';
-import { Pagination, ProductGrid } from '../components/catalog';
+import {
+  InfinitePagination,
+  Pagination,
+  ProductGrid,
+} from '../components/catalog';
 import { GridControls } from '../components/catalog/GridControls';
 import { useCart, useProducts } from '../hooks';
 import { Layout } from '../layouts';
@@ -46,6 +50,11 @@ const Home = () => {
               products={products}
               setPaginatedProducts={setPaginatedProducts}
             ></Pagination>
+
+            {/* <InfinitePagination
+              products={products}
+              setPaginatedProducts={setPaginatedProducts}
+            ></InfinitePagination> */}
           </section>
         </main>
       </Layout>

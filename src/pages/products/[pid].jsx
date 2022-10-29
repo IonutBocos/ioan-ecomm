@@ -7,6 +7,8 @@ import { Layout } from '../../layouts';
 import { BiLoaderCircle } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
 import { useProduct } from '../../hooks';
+import Image from 'next/image';
+import { AddToCart } from '../../components/catalog/AddToCart';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -48,11 +50,14 @@ const ProductPage = () => {
 
           <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12">
             <div className="col-start-1 col-span-4">
-              <img
+              <Image
                 alt={`Image of ${title}`}
                 className="block w-full"
                 src={image}
-              />
+                width="650"
+                height="650"
+                objectFit="contain"
+              ></Image>
             </div>
 
             <header className="col-start-7 col-span-6 pt-12">
@@ -67,16 +72,7 @@ const ProductPage = () => {
               </div>
 
               <div className="mt-12">
-                <button
-                  className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-800 transition-colors"
-                  title={`Add ${title} to cart`}
-                  type="button"
-                  onClick={() => {
-                    alert(id);
-                  }}
-                >
-                  Add to cart
-                </button>
+                <AddToCart product={product}></AddToCart>
               </div>
             </header>
           </section>
