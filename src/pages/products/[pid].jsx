@@ -5,10 +5,12 @@ import { useRouter } from 'next/router';
 import { CartControl, ContinueShopping } from '../../components/cart';
 import { Layout } from '../../layouts';
 import { BiLoaderCircle } from 'react-icons/bi';
-import { AiFillStar } from 'react-icons/ai';
+
 import { useProduct } from '../../hooks';
 import Image from 'next/image';
 import { AddToCart } from '../../components/catalog/AddToCart';
+import { ProductReviews } from '../../components/catalog/ProductReviews';
+import { RelatedProducts } from '../../components/catalog';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -27,7 +29,7 @@ const ProductPage = () => {
     return <span>Product not found</span>;
   }
 
-  const { id, title, description, price, image } = product;
+  const { id, title, description, price, image, rating, category } = product;
 
   const formattedPrice = new Intl.NumberFormat('en-US', {
     currency: 'USD',
@@ -48,7 +50,7 @@ const ProductPage = () => {
             <CartControl></CartControl>
           </header>
 
-          <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12">
+          <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12 pb-16">
             <div className="col-start-1 col-span-4">
               <Image
                 alt={`Image of ${title}`}
@@ -62,6 +64,10 @@ const ProductPage = () => {
 
             <header className="col-start-7 col-span-6 pt-12">
               <h1 className="text-2xl uppercase font-medium">{title}</h1>
+              <ProductReviews
+                rate={rating.rate}
+                count={rating.count}
+              ></ProductReviews>
 
               <p className="mt-12">{description}</p>
 
@@ -77,7 +83,13 @@ const ProductPage = () => {
             </header>
           </section>
           <section className="border-t"></section>
-          <section className="container px-4 lg:px-0 mx-auto">jos</section>
+          <section className="container px-4 lg:px-0 mx-auto py-16">
+            <h1 className="font-bold text-xl text-center">RELATED PRODUCTS</h1>
+            <RelatedProducts
+              category={category}
+              relatedId={id}
+            ></RelatedProducts>
+          </section>
         </main>
       </Layout>
     </>

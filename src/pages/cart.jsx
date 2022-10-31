@@ -37,7 +37,7 @@ const Cart = () => {
             </div>
 
             <aside className="col-span-4">
-              <CartTotals></CartTotals>
+              <CartTotals className="text-center"></CartTotals>
             </aside>
           </section>
         </main>

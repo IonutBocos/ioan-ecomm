@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
-import { ProductReviews } from './ProductReviews';
 import { AddToCart } from './AddToCart';
+
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
   const { rate, count } = product.rating;
