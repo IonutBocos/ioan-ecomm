@@ -31,7 +31,7 @@ export const RelatedProducts = ({ category, relatedId }) => {
 
         if (category === category && relatedId !== id) {
           return (
-            <article className="w-full">
+            <article className="w-full" key={id}>
               <section>
                 <Link href={`/products/${id}`}>
                   <a title={title}>
