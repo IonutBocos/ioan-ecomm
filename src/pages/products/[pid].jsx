@@ -51,7 +51,7 @@ const ProductPage = () => {
           </header>
 
           <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12 pb-16">
-            <div className="col-start-1 col-span-4">
+            <div className="lg:col-start-1 lg:col-span-4 sm:col-start-1 sm:col-span-12">
               <Image
                 alt={`Image of ${title}`}
                 className="block w-full"
@@ -62,7 +62,7 @@ const ProductPage = () => {
               ></Image>
             </div>
 
-            <header className="col-start-7 col-span-6 pt-12">
+            <header className="lg:col-start-7 lg:col-span-6 pt-12 sm:col-start-1 sm:col-span-12">
               <h1 className="text-2xl uppercase font-medium">{title}</h1>
               <ProductReviews
                 rate={rating.rate}
