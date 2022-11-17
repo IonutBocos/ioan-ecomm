@@ -10,13 +10,7 @@ export const useIsMobile = () => {
       setIsMobile(!event.matches);
     };
 
-    const mediaQueryList = matchMedia('(min-width:1024px)');
-    // if (matches) {
-    //   setIsMobile(true);
-    // } else {
-    //   setIsMobile(false);
-    // }
-
+    const mediaQueryList = matchMedia('(min-width: 1024px)');
     setIsMobile(!mediaQueryList.matches);
     mediaQueryList.addEventListener('change', handler);
 
@@ -24,4 +18,6 @@ export const useIsMobile = () => {
       mediaQueryList.removeEventListener('change', handler);
     };
   }, []);
+
+  return isMobile;
 };

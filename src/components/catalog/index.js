@@ -6,3 +6,4 @@ export * from './ProductReviews';
 export * from './InfinitePagination';
 export * from './AddToCart';
 export * from './RelatedProducts';
+export * from './RemoveFromCart';

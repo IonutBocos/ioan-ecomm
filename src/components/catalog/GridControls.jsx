@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BsFillGridFill, BsGrid3X3GapFill } from 'react-icons/bs';
 import { FaGripLines } from 'react-icons/fa';
 import { useIsMobile, useLocalStorage } from '../../hooks';

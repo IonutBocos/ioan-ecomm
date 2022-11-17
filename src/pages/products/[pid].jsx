@@ -10,7 +10,7 @@ import { useProduct } from '../../hooks';
 import Image from 'next/image';
 import { AddToCart } from '../../components/catalog/AddToCart';
 import { ProductReviews } from '../../components/catalog/ProductReviews';
-import { RelatedProducts } from '../../components/catalog';
+import { RelatedProducts, RemoveFromCart } from '../../components/catalog';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -50,8 +50,8 @@ const ProductPage = () => {
             <CartControl></CartControl>
           </header>
 
-          <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12 pb-16">
-            <div className="lg:col-start-1 lg:col-span-4 sm:col-start-1 sm:col-span-12">
+          <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12 pb-16 text-center lg:text-left ">
+            <div className="lg:col-start-1 lg:col-span-4 col-start-1 col-span-12 inline -z-10">
               <Image
                 alt={`Image of ${title}`}
                 className="block w-full"
@@ -62,23 +62,27 @@ const ProductPage = () => {
               ></Image>
             </div>
 
-            <header className="lg:col-start-7 lg:col-span-6 pt-12 sm:col-start-1 sm:col-span-12">
-              <h1 className="text-2xl uppercase font-medium">{title}</h1>
+            <header className="lg:col-start-7 lg:col-span-6 pt-12 col-start-1 col-span-12 ">
+              <h1 className=" text-xl lg:text-2xl uppercase font-medium">
+                {title}
+              </h1>
+
               <ProductReviews
                 rate={rating.rate}
                 count={rating.count}
               ></ProductReviews>
 
-              <p className="mt-12">{description}</p>
+              <p className=" mt-3 lg:mt-12">{description}</p>
 
-              <div className="mt-12">
-                <span className="text-3xl leading-9 font-bold">
+              <div className="mt-3 lg:mt-12">
+                <span className="text-3xl leading-9 font-bold ">
                   {formattedPrice}
                 </span>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-3 lg:mt-12">
                 <AddToCart product={product}></AddToCart>
+                <RemoveFromCart product={product}></RemoveFromCart>
               </div>
             </header>
           </section>

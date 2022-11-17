@@ -30,13 +30,13 @@ const Cart = () => {
             <CartControl cart={cart}></CartControl>
           </header>
 
-          <section className="mt-16 grid grid-cols-12 gap-8">
-            <div className="col-span-8">
+          <section className="mt-16 grid grid-cols-12 gap-8 text-sm lg:text-base">
+            <div className="col-span-12 lg:col-span-8 ">
               <CartItems></CartItems>
               <CartVaucher></CartVaucher>
             </div>
 
-            <aside className="col-span-4">
+            <aside className="col-start-4 col-end-10 lg:col-span-4">
               <CartTotals className="text-center"></CartTotals>
             </aside>
           </section>

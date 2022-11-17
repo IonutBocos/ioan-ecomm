@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useProduct } from '../../hooks';
 import { AppContext } from '../../pages/_app';
 import { ProductReviews } from '../catalog';
+import { BsTrash } from 'react-icons/bs';
 
 export const CartLineItems = ({ product }) => {
   const { quantity, productId } = product;
@@ -42,7 +43,7 @@ export const CartLineItems = ({ product }) => {
           </a>
         </Link>
 
-        <div className="flex-row">
+        <div className="flex-row text-sm lg:text-base">
           <Link href={`/products/${id}`}>
             <a title={title}>{title}</a>
           </Link>
@@ -53,10 +54,10 @@ export const CartLineItems = ({ product }) => {
           ></ProductReviews>
         </div>
       </td>
-      <td className="text-center">{formattedPriceOne}</td>
+      <td className="text-center text-sm lg:text-base">{formattedPriceOne}</td>
       <td className="text-center">
         <div
-          className="border
+          className="border flex items-center
         "
         >
           <button
