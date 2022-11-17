@@ -80,7 +80,7 @@ const ProductPage = () => {
                 </span>
               </div>
 
-              <div className="mt-3 lg:mt-12">
+              <div className="mt-3 lg:mt-12 flex flex-row gap-4">
                 <AddToCart product={product}></AddToCart>
                 <RemoveFromCart product={product}></RemoveFromCart>
               </div>
