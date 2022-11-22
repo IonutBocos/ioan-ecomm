@@ -30,7 +30,7 @@ export const Pagination = ({ products, setPaginatedProducts }) => {
   const pagesCount = Math.ceil(total / perPage);
 
   return (
-    <ul className="flex gap-2">
+    <ul className="flex gap-2 justify-center cursor-pointer">
       {Array(pagesCount)
         .fill('_')
         .map((_, index) => {

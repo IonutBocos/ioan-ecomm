@@ -9,8 +9,17 @@ export const RemoveFromCart = ({ product }) => {
     return;
   }
 
-  const { id: cartId } = cart;
+  const { id: cartId, products } = cart;
   const { id: productId, title } = product;
+
+  let quantity = 0;
+  let isInCart = false;
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].productId === productId) {
+      quantity = products[i].quantity;
+      isInCart = true;
+    }
+  }
 
   const newCart = {};
 
@@ -26,18 +35,24 @@ export const RemoveFromCart = ({ product }) => {
         return response.json();
       })
       .then((_) => {
-        alterProduct(productId);
+        alterProduct(productId, -quantity);
       });
   };
 
   return (
-    <button
-      className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-800 transition-colors "
-      title={`Add ${title} to cart`}
-      type="button"
-      onClick={onClick}
-    >
-      Remove from cart
-    </button>
+    <div>
+      {isInCart ? (
+        <button
+          className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-800 transition-colors "
+          title={`Add ${title} to cart`}
+          type="button"
+          onClick={onClick}
+        >
+          Remove from cart
+        </button>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 };

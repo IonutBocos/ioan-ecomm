@@ -19,6 +19,7 @@ export const CartItems = () => {
     <table>
       <thead>
         <tr className="border-b text-zinc-500 ">
+          <th></th>
           <th>Product</th>
           <th>Price</th>
           <th>Quantity</th>

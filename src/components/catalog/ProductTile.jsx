@@ -2,12 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 import { AddToCart } from './AddToCart';
+import { ProductReviews } from './ProductReviews';
 
 export const ProductTile = ({ product }) => {
-  const { title, price, image, id } = product;
-  const { rate, count } = product.rating;
-
-  const rateProduct = Math.floor(rate);
+  const { id, title, price, image, rating } = product;
 
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -35,9 +33,10 @@ export const ProductTile = ({ product }) => {
 
       <section className="mt-8 text-center text-sm flex flex-col items-center">
         <div className="flex items-center">
-          {Array(rateProduct).fill(<AiFillStar></AiFillStar>)}
-
-          <p className="px-2">({count} Reviews)</p>
+          <ProductReviews
+            rate={rating.rate}
+            count={rating.count}
+          ></ProductReviews>
         </div>
 
         <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>

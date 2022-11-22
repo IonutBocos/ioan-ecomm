@@ -80,14 +80,14 @@ const ProductPage = () => {
                 </span>
               </div>
 
-              <div className="mt-3 lg:mt-12 flex flex-row gap-4">
+              <div className="mt-3 lg:mt-12 flex flex-row gap-4 justify-center lg:justify-start">
                 <AddToCart product={product}></AddToCart>
                 <RemoveFromCart product={product}></RemoveFromCart>
               </div>
             </header>
           </section>
           <section className="border-t"></section>
-          <section className="container px-4 lg:px-0 mx-auto py-16">
+          <section className="container px-4 lg:px-0 mx-auto py-16 ">
             <h1 className="font-bold text-xl text-center">RELATED PRODUCTS</h1>
             <RelatedProducts
               category={category}
